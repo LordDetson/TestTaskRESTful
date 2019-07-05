@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Hotel {
+public class WorkSchedule {
     @Id
     private String id;
     private Period workSchedule;
