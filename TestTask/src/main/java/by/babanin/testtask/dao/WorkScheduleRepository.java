@@ -1,7 +1,7 @@
 package by.babanin.testtask.dao;
 
-import by.babanin.testtask.entity.Hotel;
+import by.babanin.testtask.entity.WorkSchedule;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface HotelRepository extends MongoRepository<Hotel> {
+public interface WorkScheduleRepository extends MongoRepository<WorkSchedule, String> {
 }
