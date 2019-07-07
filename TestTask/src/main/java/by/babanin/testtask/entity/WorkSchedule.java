@@ -24,4 +24,9 @@ public class WorkSchedule {
     public void setWorkSchedule(Period workSchedule) {
         this.workSchedule = workSchedule;
     }
+
+    @Override
+    public String toString() {
+        return workSchedule.toString();
+    }
 }
