@@ -1,5 +1,7 @@
 package by.babanin.testtask.entity;
 
+import by.babanin.testtask.entity.view.ViewUser;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
@@ -13,9 +15,13 @@ import java.util.StringJoiner;
 @Document
 public class User implements UserDetails {
     @Id
+    @JsonView(ViewUser.NoPassword.class)
     private String id;
+    @JsonView(ViewUser.NoPassword.class)
     private String username;
+    @JsonView(ViewUser.FullUser.class)
     private String password;
+    @JsonView(ViewUser.NoPassword.class)
     private Set<UserRole> roles;
 
     @Override
