@@ -1,7 +1,7 @@
 # TestTaskRESTful
 Easy task Spring RESTful
 
-Test task: 
+Task content: https://github.com/LordDetson/TestTaskRESTful/blob/master/TestTask.pdf
 
 After the application is deployed, "tasttask" database has the "user" and "room" collections.
 
@@ -12,6 +12,14 @@ After the application is deployed, "tasttask" database has the "user" and "room"
 { "username" : "user", "password" : "$2a$08$MYGk61Ew7BPVO6L9grtPZ.2AX7j93bk20u1JRc3NnQOaD8t4D8.qy", "roles" : [ "USER" ], "_class" : "by.babanin.testtask.entity.User" } - password: u
 
 Username and password can be changed before deploying in file application.properties
+
+"room" collection:
+
+{ "number" : "1000", "price" : 25.6, "_class" : "by.babanin.testtask.entity.Room" }
+
+{ "number" : "1001", "price" : 12.84, "reservation" : { "5d220cc1f036421d98ed1286" : { "start" : ISODate("2019-07-05T15:16:18.062Z"), "finish" : ISODate("2019-07-09T15:16:18.062Z") } }, "_class" : "by.babanin.testtask.entity.Room" }
+
+Number and price can be changed before deploying in file application.properties
 
 Requests to the server:
 
