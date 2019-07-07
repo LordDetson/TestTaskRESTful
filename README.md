@@ -1,6 +1,8 @@
 # TestTaskRESTful
 Easy task Spring RESTful
 
+Test task: 
+
 After the application is deployed, "tasttask" database has the "user" and "room" collections.
 
 "user" collection has:
@@ -57,7 +59,21 @@ Mathod: POST
 http://localhost:8080/workschedule
 Mathod: GET
 
-2.4 Getting a free rooms.
+2.4 Getting a free rooms. If the range goes beyond the schedule of the hotel, we get an error.
 
 http://localhost:8080/rooms
 Mathod: GET
+Header: Content-Type="application/json"
+Body: {"start":"2019-07-08 00:00:00","finish":"2019-07-12 00:00:00"}
+
+2.5 Getting a booking fee. If the range goes beyond the schedule of the hotel, we get an error.
+
+http://localhost:8080/room/bookingFee?number=1002&start=2019-07-08%2000:00:00&finish=2019-07-12%2000:00:00
+Mathod: POST
+
+2.6 Reservation a room. If the amount is not equal a booking fee, then we get an error.
+
+http://localhost:8080/room/bookingFee?number=1002&start=2019-07-08%2000:00:00&finish=2019-07-12%2000:00:00&amount=120
+Mathod: POST
+
+Conclusion: The project was completed in accordance with the task.
