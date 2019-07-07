@@ -1,18 +1,25 @@
 package by.babanin.testtask.service;
 
-import by.babanin.testtask.dao.RoomRepository;
-import by.babanin.testtask.dao.WorkScheduleRepository;
-import org.springframework.stereotype.Service;
+import by.babanin.testtask.entity.*;
 
-@Service
-public class RoomService {
-    private final RoomRepository roomRepository;
-    private final WorkScheduleRepository workScheduleRepository;
+import java.util.List;
 
-    public RoomService(RoomRepository roomRepository, WorkScheduleRepository workScheduleRepository) {
-        this.roomRepository = roomRepository;
-        this.workScheduleRepository = workScheduleRepository;
-    }
+public interface RoomService {
+    WorkSchedule getWorkSchedule();
 
+    WorkSchedule setWorkSchedule(WorkSchedule workSchedule);
 
+    List<Room> getFreeRooms(Period period);
+
+    List<Room> getAllRooms();
+
+    Room addRoom(Room room);
+
+    Room updateRoom(Room roomFromDb, Room room);
+
+    Room getRoomByNumber(String number);
+
+    Room reservation(User user, Room room, Period period);
+
+    BookingFee bookingFee(Room room, Period period);
 }
