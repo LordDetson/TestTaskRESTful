@@ -2,7 +2,6 @@ package by.babanin.testtask.config;
 
 import by.babanin.testtask.config.restComponent.MySavedRequestAwareAuthenticationSuccessHandler;
 import by.babanin.testtask.config.restComponent.RestAuthenticationEntryPoint;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -24,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final SimpleUrlAuthenticationFailureHandler myFailureHandler;
 
     public WebSecurityConfig(
-            @Qualifier("userServiceImpl") UserDetailsService userService,
+            UserDetailsService userService,
             PasswordEncoder passwordEncoder,
             RestAuthenticationEntryPoint restAuthenticationEntryPoint,
             MySavedRequestAwareAuthenticationSuccessHandler mySuccessHandler) {
