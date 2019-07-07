@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
+@Service("roomService")
 public class RoomServiceImpl implements RoomService {
     private final RoomRepository roomRepository;
     private final WorkScheduleRepository workScheduleRepository;
